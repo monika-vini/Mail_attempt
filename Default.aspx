@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#"  AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="job_form._Default" %>
+ 
 
 
 <!DOCTYPE html>
@@ -11,14 +12,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" href="images/logo.png" type="image/png">
 <title> Job Seeker</title>
-    <!--<link href="jquery.datetimepicker.min.css" rel="stylesheet" />
-    <link type="text/css" href="css/smoothness/jquery-ui-1.7.1.custom.css" rel="stylesheet" />-->
-
+    
      
 </head>
 <body style="background-color:#f9f9f98b;">
 	<form id="form1" runat="server">
-    
+
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>&nbsp;&nbsp;&nbsp;
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
@@ -61,7 +60,7 @@
 <tr>
    <td>     <div class="row align-items-center  d-flex justify-content-center mt-5 ">
             <div class="col-4 d-flex justify-content-center">
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
@@ -73,8 +72,11 @@
           </div>
 
             </div>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtbx1" ErrorMessage="Enter a First Name" ForeColor="gray"></asp:RequiredFieldValidator>
+
+        
             <div class="col-4 d-flex justify-content-center">
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
@@ -85,11 +87,13 @@
 
         <asp:TextBox ID="txtbx2" runat="server" type="text" class="form-control" placeholder="Last_Name"  aria-label="Last Name"
                         aria-describedby="basic-addon1"></asp:TextBox>
-                    </div>
+                      </div>
             </div>
         </div>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtbx2" ErrorMessage="Enter a Last Name" ForeColor="gray"></asp:RequiredFieldValidator>
+            
        </td>
-</tr> </br></br>
+</tr><br />
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td>
@@ -105,9 +109,11 @@
                 </div>
 
             </div>
- 
+  <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="bday" ErrorMessage="Enter a First Name" ForeColor="Aqua"></asp:RequiredFieldValidator>
+
+          
 </td>
-</tr></br></br>
+</tr>
 <!----- Gender ---------------------------------------------------------->
 <tr><td>
     <div class="col-4 d-flex justify-content-center">
@@ -133,12 +139,12 @@
             </div>
         </div>
 </td>
-</tr></br></br>
+</tr><br />
 <!----- e-mail id ---------------------------------------------------------->
 <tr><td>
     <div class="row align-items-center  d-flex justify-content-center mt-5 ">
     <div class="col-4 d-flex justify-content-center">
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
@@ -147,15 +153,20 @@
                     </div>
 <asp:TextBox ID="txtbx3" runat="server" type="text"  maxlength="100" class="form-control" placeholder="eg:test@gmail.com" aria-label="Email"
                         aria-describedby="basic-addon1"></asp:TextBox>
+                    
     </div>
             </div>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Email cannot be blank" ControlToValidate="txtbx3" ForeColor="gray"></asp:RequiredFieldValidator>  
+  
+           <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtbx3" ErrorMessage="Enter proper email format" ForeColor="gray" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>  
+  
   </td>
-</tr></br></br>
+</tr>
 <!----- address ---------------------------------------------------------->
 <tr><td>
 
             <div class="col-4 d-flex justify-content-center">
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
@@ -164,15 +175,17 @@
                     </div>
     <asp:TextBox ID="txtbx4" runat="server" type="text"  class="form-control align-items-center" aria-label="Address"
                         aria-describedby="basic-addon1" ></asp:TextBox>
+
         </div>
             </div>
         </div>
+               <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtbx4" ErrorMessage="Enter address" ForeColor="Aqua" ></asp:RequiredFieldValidator>
+
         </td>
-</tr></br></br>
- <tr>
+</tr><br />
  	<!----- pin code ---------------------------------------------------------->
 <tr><td>
-<div class="row align-items-center  d-flex justify-content-center mt-5 ">
+<div class="row align-items-center  d-flex justify-content-center mt-4 ">
             <div class="col-4 d-flex justify-content-center">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -184,11 +197,15 @@
 
 <asp:TextBox ID="txtbx5" runat="server" type="text" class="form-control" placeholder="eg:000000" aria-label="Pincode"
                         aria-describedby="basic-addon1" maxlength="6"></asp:TextBox>
+                    
      </div>
 
             </div>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="pincode cannot be blank" ControlToValidate="txtbx5" ForeColor="aqua"></asp:RequiredFieldValidator>  
+        <asp:RegularExpressionValidator RegularExpressionValidatorID="RegularExpressionValidator3" runat="server" ControlToValidate="txtbx5" ErrorMessage="pincode must be 6 digit" ForeColor="aqua" ValidationExpression="\d{6}"></asp:RegularExpressionValidator>  
+   
 </td>
-</tr></br></br>
+</tr>
 <!----- Mobile Number ---------------------------------------------------------->
 <tr><td>
     <div class="col-4 d-flex justify-content-center">
@@ -201,11 +218,14 @@
                     </div>
 <asp:TextBox ID="txtbx6" runat="server" type="text" class="form-control" placeholder="eg:7777788888" aria-label="Phone Number"
                         aria-describedby="basic-addon1" maxlength="10"></asp:TextBox>
-     </div>
+                        </div>
             </div>
         </div>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Mobile cannot be blank" ControlToValidate="txtbx6" ForeColor="aqua"></asp:RequiredFieldValidator>  
+           <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtbx6" ErrorMessage="Mobile number must be 10 digit" ForeColor="aqua" ValidationExpression="\d{10}"></asp:RegularExpressionValidator>  
+ 
 </td>
-</tr></br></br>
+</tr><br />
 <!----- edu details ---------------------------------------------------------->
 <tr>
 	
@@ -215,16 +235,11 @@
                     Education Details </h3>
             </div>
         </div>
-</tr></br></br>
-<!----- Mobile Number ---------------------------------------------------------->
+</tr></br>
+<!----- course ---------------------------------------------------------->
 <tr>
 	 <td>
 
-<!--<select name="courseval" id="courseval">
-    <option value=0></option>
-<option value="1">B.E/B.TECH</option>
-<option value="2">OTHERS</option>
-</select>-->
     <div class="row align-items-center  d-flex justify-content-center mt-5 ">
     <div class="col-4 d-flex justify-content-center">
                 <div class="input-group mb-3">
@@ -238,8 +253,12 @@
    <asp:ListItem value="--select one--"></asp:ListItem>
             <asp:ListItem>B.E/B.TECH</asp:ListItem>
             <asp:ListItem>OTHERS</asp:ListItem>
-</asp:DropDownList></div>
+</asp:DropDownList>
+           </div>
             </div>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="course cannot be blank" ControlToValidate="courseval" ForeColor="aqua"></asp:RequiredFieldValidator>  
+
+                
 	</td>
 </tr>
 <!----- dept ---------------------------------------------------------->
@@ -264,11 +283,14 @@
 <asp:ListItem>Mechanical Engineering</asp:ListItem>
 <asp:ListItem>Others</asp:ListItem>
 </asp:DropDownList>
-                    </div>
+                   </div>
             </div>
         </div>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="dept cannot be blank" ControlToValidate="dept" ForeColor="aqua"></asp:RequiredFieldValidator>  
+
+   
 	</td>
-</tr></br></br>
+</tr><br />
 <!----- institute name ---------------------------------------------------------->
 
 <tr><td>
@@ -284,10 +306,13 @@
 
      <asp:TextBox ID="txtbx7" runat="server" type="text" class="form-control" placeholder="eg:college name" aria-label="Institute Name"
                         aria-describedby="basic-addon1" ></asp:TextBox>
-     </div>
+      </div>
             </div>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="institute cannot be blank" ControlToValidate="txtbx7" ForeColor="aqua"></asp:RequiredFieldValidator>  
+
+    
 </td>
-</tr></br></br>
+</tr>
 <!----- passing yr ---------------------------------------------------------->
 <tr><td>
     <div class="col-4 d-flex justify-content-center">
@@ -297,7 +322,7 @@
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
                             id="basic-addon1">Passout Year</span>
                     </div>
-<asp:DropDownList runat="server" id="pass_yr" class="form-control" placeholder="eg:2015" aria-label="Passout Year"
+<asp:DropDownList runat="server" id="pass_yr" class="custom-select" aria-label="Passout Year"
                         aria-describedby="basic-addon1">
  
 <asp:ListItem value="">Year:</asp:ListItem>
@@ -315,10 +340,13 @@
 <asp:ListItem>2001</asp:ListItem>
 <asp:ListItem>2000</asp:ListItem>
 </asp:DropDownList>
+   
                     </div>
             </div>
         </div>
-</td></tr></br></br>
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="passout year cannot be blank" ControlToValidate="pass_yr" ForeColor="aqua"></asp:RequiredFieldValidator>  
+ 
+</td></tr><br />
 <!----- other details ---------------------------------------------------------->
 <tr>
     <div class="row mt-3">
@@ -328,7 +356,7 @@
             </div>
         </div>
 
-</tr></br></br>
+</tr>
 <!----- lang  ----------------------------------------------------------> 
 <tr><td>
  <div class="row align-items-center  d-flex justify-content-center mt-5 ">
@@ -361,7 +389,7 @@
      </div>
             </div>
 </td>
-</tr></br></br>
+</tr>
 <!----- married status  ----------------------------------------------------------> 
 <tr><td>
             <div class="col-4 d-flex justify-content-center">
@@ -387,7 +415,7 @@
             </div>
         </div>
 </td>
-</tr></br></br>
+</tr><br />
 <!----- Key skill   ----------------------------------------------------------> 
 <tr>
 	<td>
@@ -405,8 +433,11 @@
                     </div>
 
             </div>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ErrorMessage="please enter key skills feild " ControlToValidate="txtbx8" ForeColor="aqua"></asp:RequiredFieldValidator>  
+
+      
 	</td>
-</tr><br /><br />
+</tr>
 <!----- exp  ----------------------------------------------------------> 
 <tr> 
 <td><div class="col-4 d-flex justify-content-center">
@@ -419,13 +450,15 @@
   
 <asp:TextBox ID="txtbx9" runat="server" type="text" class="form-control" placeholder="eg:Application developer" aria-label="Role"
                         aria-describedby="basic-addon1" ></asp:TextBox>
+    
                     </div>
     </div>
             </div>
-        
+   <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="please fill in this field" ControlToValidate="txtbx9" ForeColor="aqua"></asp:RequiredFieldValidator>  
+     
 
 </td>
-</tr></br></br>
+</tr><br />
 <!----- btn  ----------------------------------------------------------> 
 <tr>
 	        <div class="row mt-5">

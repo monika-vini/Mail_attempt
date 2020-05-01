@@ -29,23 +29,24 @@ namespace job_form
                 MailMessage mail = new MailMessage();
             mail.To.Add(txtTo.Text);
 
-            mail.From = new MailAddress("venkatsantos20@gmail.com");
+            mail.From = new MailAddress("monikavini8864@gmail.com");
             mail.Subject = "Email using Gmail";
             string Body = txtmessage.Text;
             mail.Body = Body;
             SmtpClient smtp = new SmtpClient{
                 Host = "smtp.gmail.com",
                 Port = 587,
-                Credentials = new System.Net.NetworkCredential("venkatsantos20@gmail.com", "venkat5@ntos"),
+                UseDefaultCredentials = false,
+                Credentials = new System.Net.NetworkCredential("monikavini8864@gmail.com", "Vinitha09@"),
                 Timeout = 30000,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                EnableSsl = true,
-                UseDefaultCredentials=true,
+               
 
             };
                 mail.IsBodyHtml = true;
                 smtp.Send(mail);
-                Response.Write("<script> alert('" + mail + "');</script>");
+                Response.Write("<script> alert('User succesfully registered');</script>");
             }
             catch (Exception ex)
             {

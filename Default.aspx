@@ -65,33 +65,24 @@
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
                             id="basic-addon1">First Name</span>
-
      </div>
   <asp:TextBox ID="txtbx1" runat="server" type="text" class="form-control" placeholder="First_Name" aria-label="First Name"
-                        aria-describedby="basic-addon1"></asp:TextBox>
+                        aria-describedby="basic-addon1" required></asp:TextBox>
           </div>
-
             </div>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtbx1" ErrorMessage="Enter a First Name" ForeColor="gray"></asp:RequiredFieldValidator>
-
-        
+       
             <div class="col-4 d-flex justify-content-center">
                 <div class="input-group mb-4">
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
                             id="basic-addon1">Last Name</span>
-
                     </div>
-               
-
         <asp:TextBox ID="txtbx2" runat="server" type="text" class="form-control" placeholder="Last_Name"  aria-label="Last Name"
-                        aria-describedby="basic-addon1"></asp:TextBox>
+                        aria-describedby="basic-addon1" required></asp:TextBox>
                       </div>
             </div>
         </div>
-         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtbx2" ErrorMessage="Enter a Last Name" ForeColor="gray"></asp:RequiredFieldValidator>
-            
        </td>
 </tr><br />
 <!----- Date Of Birth -------------------------------------------------------->
@@ -106,12 +97,8 @@
                             id="basic-addon1">Dob</span>
                     </div>
       <asp:TextBox runat="server" type="date" id="bday" value=""  class="form-control" aria-label="Dob" aria-describedby="basic-addon1"></asp:TextBox>
-                </div>
-
+                    </div>
             </div>
-  <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="bday" ErrorMessage="Enter a First Name" ForeColor="Aqua"></asp:RequiredFieldValidator>
-
-          
 </td>
 </tr>
 <!----- Gender ---------------------------------------------------------->
@@ -148,23 +135,16 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
-                            id="basic-addon1">Email</span>
-
+                            id="basic-addon1" >Email</span>
                     </div>
 <asp:TextBox ID="txtbx3" runat="server" type="text"  maxlength="100" class="form-control" placeholder="eg:test@gmail.com" aria-label="Email"
-                        aria-describedby="basic-addon1"></asp:TextBox>
-                    
+                        aria-describedby="basic-addon1" required></asp:TextBox>
+           </div>
     </div>
-            </div>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Email cannot be blank" ControlToValidate="txtbx3" ForeColor="gray"></asp:RequiredFieldValidator>  
-  
-           <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtbx3" ErrorMessage="Enter proper email format" ForeColor="gray" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>  
-  
-  </td>
+</td>
 </tr>
 <!----- address ---------------------------------------------------------->
 <tr><td>
-
             <div class="col-4 d-flex justify-content-center">
                 <div class="input-group mb-4">
                     <div class="input-group-prepend">
@@ -173,37 +153,27 @@
                             id="basic-addon1">Address</span>
                         </span>
                     </div>
-    <asp:TextBox ID="txtbx4" runat="server" type="text"  class="form-control align-items-center" aria-label="Address"
-                        aria-describedby="basic-addon1" ></asp:TextBox>
-
+    <asp:TextBox ID="txtbx4" runat="server" type="text"  class="form-control align-items-center" placeholder="enter address" aria-label="Address"
+                        aria-describedby="basic-addon1" required></asp:TextBox>
         </div>
             </div>
         </div>
-               <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtbx4" ErrorMessage="Enter address" ForeColor="Aqua" ></asp:RequiredFieldValidator>
-
         </td>
 </tr><br />
  	<!----- pin code ---------------------------------------------------------->
 <tr><td>
-<div class="row align-items-center  d-flex justify-content-center mt-4 ">
+<div class="row align-items-center  d-flex justify-content-center mt-5">
             <div class="col-4 d-flex justify-content-center">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
                             id="basic-addon1">Pincode</span>
-
                     </div>
-
 <asp:TextBox ID="txtbx5" runat="server" type="text" class="form-control" placeholder="eg:000000" aria-label="Pincode"
-                        aria-describedby="basic-addon1" maxlength="6"></asp:TextBox>
-                    
+                        aria-describedby="basic-addon1" maxlength="6" required></asp:TextBox>
      </div>
-
             </div>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="pincode cannot be blank" ControlToValidate="txtbx5" ForeColor="aqua"></asp:RequiredFieldValidator>  
-        <asp:RegularExpressionValidator RegularExpressionValidatorID="RegularExpressionValidator3" runat="server" ControlToValidate="txtbx5" ErrorMessage="pincode must be 6 digit" ForeColor="aqua" ValidationExpression="\d{6}"></asp:RegularExpressionValidator>  
-   
 </td>
 </tr>
 <!----- Mobile Number ---------------------------------------------------------->
@@ -214,16 +184,12 @@
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
                             id="basic-addon1">Phone Number</span>
-
                     </div>
 <asp:TextBox ID="txtbx6" runat="server" type="text" class="form-control" placeholder="eg:7777788888" aria-label="Phone Number"
-                        aria-describedby="basic-addon1" maxlength="10"></asp:TextBox>
+                        aria-describedby="basic-addon1" maxlength="10" required></asp:TextBox>
                         </div>
             </div>
         </div>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Mobile cannot be blank" ControlToValidate="txtbx6" ForeColor="aqua"></asp:RequiredFieldValidator>  
-           <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtbx6" ErrorMessage="Mobile number must be 10 digit" ForeColor="aqua" ValidationExpression="\d{10}"></asp:RegularExpressionValidator>  
- 
 </td>
 </tr><br />
 <!----- edu details ---------------------------------------------------------->
@@ -239,7 +205,6 @@
 <!----- course ---------------------------------------------------------->
 <tr>
 	 <td>
-
     <div class="row align-items-center  d-flex justify-content-center mt-5 ">
     <div class="col-4 d-flex justify-content-center">
                 <div class="input-group mb-3">
@@ -247,7 +212,6 @@
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
                             id="basic-addon1">Course</span>
-
                     </div>
    <asp:DropDownList runat="server" class="custom-select" id="courseval">
    <asp:ListItem value="--select one--"></asp:ListItem>
@@ -256,21 +220,16 @@
 </asp:DropDownList>
            </div>
             </div>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="course cannot be blank" ControlToValidate="courseval" ForeColor="aqua"></asp:RequiredFieldValidator>  
-
-                
 	</td>
 </tr>
 <!----- dept ---------------------------------------------------------->
 <tr><td>
-    
             <div class="col-4 d-flex justify-content-center">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
                             id="basic-addon1">Specialization</span>
-
                     </div>
 <asp:DropDownList runat="server" class="custom-select" id="dept">
 <asp:ListItem  value="--select one--"></asp:ListItem>
@@ -286,9 +245,6 @@
                    </div>
             </div>
         </div>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="dept cannot be blank" ControlToValidate="dept" ForeColor="aqua"></asp:RequiredFieldValidator>  
-
-   
 	</td>
 </tr><br />
 <!----- institute name ---------------------------------------------------------->
@@ -303,14 +259,10 @@
                             id="basic-addon1">Institute Name</span>
                         </span>
                     </div>
-
      <asp:TextBox ID="txtbx7" runat="server" type="text" class="form-control" placeholder="eg:college name" aria-label="Institute Name"
-                        aria-describedby="basic-addon1" ></asp:TextBox>
+                        aria-describedby="basic-addon1" required></asp:TextBox>
       </div>
             </div>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="institute cannot be blank" ControlToValidate="txtbx7" ForeColor="aqua"></asp:RequiredFieldValidator>  
-
-    
 </td>
 </tr>
 <!----- passing yr ---------------------------------------------------------->
@@ -326,6 +278,13 @@
                         aria-describedby="basic-addon1">
  
 <asp:ListItem value="">Year:</asp:ListItem>
+<asp:ListItem>2019</asp:ListItem>
+<asp:ListItem>2018</asp:ListItem>
+<asp:ListItem>2017</asp:ListItem>
+<asp:ListItem>2016</asp:ListItem>
+<asp:ListItem>2015</asp:ListItem>
+<asp:ListItem>2014</asp:ListItem>
+<asp:ListItem>2013</asp:ListItem>
 <asp:ListItem>2012</asp:ListItem>
 <asp:ListItem>2011</asp:ListItem>
 <asp:ListItem>2010</asp:ListItem>
@@ -340,11 +299,9 @@
 <asp:ListItem>2001</asp:ListItem>
 <asp:ListItem>2000</asp:ListItem>
 </asp:DropDownList>
-   
                     </div>
             </div>
         </div>
-     <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="passout year cannot be blank" ControlToValidate="pass_yr" ForeColor="aqua"></asp:RequiredFieldValidator>  
  
 </td></tr><br />
 <!----- other details ---------------------------------------------------------->
@@ -355,7 +312,6 @@
                     Other Details </h3>
             </div>
         </div>
-
 </tr>
 <!----- lang  ----------------------------------------------------------> 
 <tr><td>
@@ -365,7 +321,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
-                            id="basic-addon1">Languageus<br /> are Known</span>
+                            id="basic-addon1">Languages<br /> are Known</span>
                     </div>
                     <div class="form-check ml-2 ">
 
@@ -426,16 +382,11 @@
                         <span class="input-group-text text-dark "
                             style="background-color: #00BFA6;font-weight: bolder; font-size: 16px;"
                             id="basic-addon1">Key Skills</span>
-
                     </div>
         <asp:TextBox ID="txtbx8" runat="server" type="text" class="form-control" placeholder="eg: C & C++ " aria-label="Key Skills"
-                        aria-describedby="basic-addon1" ></asp:TextBox>
+                        aria-describedby="basic-addon1" required></asp:TextBox>
                     </div>
-
             </div>
-             <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ErrorMessage="please enter key skills feild " ControlToValidate="txtbx8" ForeColor="aqua"></asp:RequiredFieldValidator>  
-
-      
 	</td>
 </tr>
 <!----- exp  ----------------------------------------------------------> 
@@ -449,14 +400,10 @@
                     </div> 
   
 <asp:TextBox ID="txtbx9" runat="server" type="text" class="form-control" placeholder="eg:Application developer" aria-label="Role"
-                        aria-describedby="basic-addon1" ></asp:TextBox>
-    
+                        aria-describedby="basic-addon1" required></asp:TextBox>
                     </div>
     </div>
             </div>
-   <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="please fill in this field" ControlToValidate="txtbx9" ForeColor="aqua"></asp:RequiredFieldValidator>  
-     
-
 </td>
 </tr><br />
 <!----- btn  ----------------------------------------------------------> 

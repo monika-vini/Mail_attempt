@@ -111,7 +111,7 @@ namespace job_form
                 mail.Body = Body;
                 MailMessage mail2 = new MailMessage();
                 mail2.To.Add("monikavini8864@gmail.com");
-                mail2.From = new MailAddress("monikavini8864@gmail.com");
+                mail2.From = new MailAddress("starssparkling2020@gmail.com");
                 mail2.Subject = " form notification ";
                 string Body1 = txtbx1.Text + " " + txtbx2.Text + "" +
                     " A new job form details are added..";
@@ -121,7 +121,7 @@ namespace job_form
                     Host = "smtp.gmail.com",
                     Port = 587,
                     UseDefaultCredentials = false,
-                    Credentials = new System.Net.NetworkCredential("starssparkling2020@gmail.com", "star123@"),
+                    Credentials = new System.Net.NetworkCredential("starssparkling2020@gmail.com", "star***@"),
                     Timeout = 30000,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     EnableSsl = true,
